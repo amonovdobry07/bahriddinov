@@ -267,17 +267,12 @@ const Products = () => {
               <div className="card__price">{formatUzs(p.priceUzs)}</div>
 
               <div className="card__actions">
-                <a className="btn btn--primary" href="/contact">
+                <a className="btn btn--primary" href="https://t.me/uzbsdd"
+                  target="_blank"
+                  rel="noreferrer">
                   Narx so‘rash
                 </a>
-                <a
-                  className="btn btn--ghost"
-                  href="https://t.me/uzbsdd"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Telegram
-                </a>
+                
               </div>
             </article>
           ))}

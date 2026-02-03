@@ -71,7 +71,7 @@ export default function Navbar() {
             </div>
 
             <a
-              className="btn btn--primary"
+              className="btn"
               href="https://t.me/uzbsdd"
               target="_blank"
               rel="noreferrer"
