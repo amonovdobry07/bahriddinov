@@ -1,0 +1,9 @@
+.app {
+  min-height: 100vh;          /* ekran balandligi */
+  display: flex;
+  flex-direction: column;
+}
+
+.app__content {
+  flex: 1;                    /* BO‘SH joyni egallaydi */
+}
