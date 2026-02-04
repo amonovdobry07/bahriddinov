@@ -92,7 +92,7 @@ export default function Navbar() {
                 to="/"
                 onClick={() => setMenuOpen(false)}
               >
-                Bosh sahifa <span className="mobile__chev">›</span>
+                {t(`home`)}<span className="mobile__chev">›</span>
               </Link>
 
               {/* ✅ yo‘llarni bir xil qildim (maxsulotlar / xizmatlar / aloqa) */}
@@ -101,7 +101,7 @@ export default function Navbar() {
                 to="/maxsulotlar"
                 onClick={() => setMenuOpen(false)}
               >
-                Mahsulotlar <span className="mobile__chev">›</span>
+                {t(`maxsulotlar`)} <span className="mobile__chev">›</span>
               </Link>
 
               <Link
@@ -109,7 +109,15 @@ export default function Navbar() {
                 to="/xizmatlar"
                 onClick={() => setMenuOpen(false)}
               >
-                Xizmatlar <span className="mobile__chev">›</span>
+                {t(`xizmatlar`)} <span className="mobile__chev">›</span>
+              </Link>
+
+             <Link
+                className="mobile__link"
+                to="/marketplace"
+                onClick={() => setMenuOpen(false)}
+              >
+                {t(`Market`)}<span className="mobile__chev">›</span>
               </Link>
 
               <Link
@@ -117,7 +125,7 @@ export default function Navbar() {
                 to="/aloqa"
                 onClick={() => setMenuOpen(false)}
               >
-                Aloqa <span className="mobile__chev">›</span>
+               {t(`aloqa`)}<span className="mobile__chev">›</span>
               </Link>
             </div>
 
