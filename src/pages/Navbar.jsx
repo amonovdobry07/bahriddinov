@@ -7,8 +7,6 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-
-
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 10);
     onScroll();
@@ -48,6 +46,9 @@ export default function Navbar() {
             <Link className="nav__link" to="/xizmatlar">
               {t(`xizmatlar`)}
             </Link>
+            <Link className="nav__link" to="/marketplace">
+              Market Place
+            </Link>
             <Link className="nav__link" to="/aloqa">
               {t(`aloqa`)}
             </Link>
@@ -58,27 +59,15 @@ export default function Navbar() {
             {/* ✅ LANG SWITCH */}
             <div className="lang">
               <select
-                id="select"
+                className="lang__select"
                 defaultValue="uz"
-                onChange={(e) => {
-                  i18n.changeLanguage(e.target.value);
-                }}
+                onChange={(e) => i18n.changeLanguage(e.target.value)}
               >
-                <option className="opp" value="uz">Uzbek</option>
-                <option className="opp" value="ru">Russian</option>
-                <option className="opp" value="en">English</option>
+                <option value="uz">🇺🇿 Uzbek</option>
+                <option value="ru">🇷🇺 Russian</option>
+                <option value="en">🇬🇧 English</option>
               </select>
             </div>
-
-            <a
-              className="btn"
-              href="https://t.me/uzbsdd"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Buyurtma berish <span className="btn__arrow">➜</span>
-            </a>
-
             {/* BURGER */}
             <button
               className={`burger ${menuOpen ? "burger--open" : ""}`}

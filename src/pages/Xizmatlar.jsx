@@ -194,12 +194,6 @@ const Xizmatlar = () => {
                   <li key={p}>{p}</li>
                 ))}
               </ul>
-
-              <div className="baCard__cta">
-                <a className="baBtn baBtn--ghost" href="tel:+998972822902">
-                  Qo‘ng‘iroq
-                </a>
-              </div>
             </div>
           </div>
 

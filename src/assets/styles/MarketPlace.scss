@@ -1,0 +1,257 @@
+.mpPro {
+  padding: 70px 0;
+  background: #fff;
+  color: #111827;
+
+  /* bu eng katta fix: sahifada content "o‘rtaga yig‘iladi" */
+  &__container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  &__head {
+    max-width: 72ch;
+    margin-bottom: 22px;
+  }
+
+  &__eyebrow {
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    margin: 0 0 10px;
+    font-size: clamp(28px, 3vw, 44px);
+    line-height: 1.12;
+  }
+
+  &__sub {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.65;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+
+  /* LEFT LIST */
+  &__list {
+    display: grid;
+    gap: 10px;
+  }
+
+  &__item {
+    --accent: #7c3aed;
+
+    display: grid;
+    grid-template-columns: 44px 1fr 14px;
+    gap: 12px;
+    align-items: center;
+
+    padding: 14px 14px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    cursor: pointer;
+
+    transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, background .16s ease;
+
+    &:hover {
+      background: #f9fafb;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(0,0,0,.06);
+    }
+
+    &.is-active {
+      border-color: color-mix(in srgb, var(--accent) 45%, #e5e7eb);
+      background: color-mix(in srgb, var(--accent) 7%, #fff);
+      box-shadow: 0 14px 28px rgba(0,0,0,.08);
+    }
+  }
+
+  &__logoBox {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    display: grid;
+    place-items: center;
+  }
+
+  &__logo {
+    height: 20px;
+    width: auto;
+    filter: grayscale(1);
+    opacity: .85;
+  }
+
+  &__item.is-active &__logo {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+
+  &__meta {
+    display: grid;
+    gap: 3px;
+    text-align: left;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 14px;
+    color: #111827;
+  }
+
+  &__desc {
+    font-size: 12.5px;
+    color: #6b7280;
+  }
+
+  &__chev {
+    color: #9ca3af;
+    font-size: 18px;
+    line-height: 1;
+    justify-self: end;
+  }
+
+  /* RIGHT PANEL */
+  &__panel {
+    --accent: #7c3aed;
+
+    border-radius: 18px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    box-shadow: 0 16px 34px rgba(0,0,0,.08);
+    padding: 18px;
+    position: relative;
+    overflow: hidden;
+    animation: mpIn .18s ease;
+  }
+
+  /* professional top bar */
+  &__panel::before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 4px;
+    background: var(--accent);
+  }
+
+  &__panelTop {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: flex-start;
+    margin-top: 6px;
+  }
+
+  &__panelLabel {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 4px;
+  }
+
+  &__panelTitle {
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: .2px;
+  }
+
+  &__badge {
+    font-size: 12px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    color: #374151;
+    white-space: nowrap;
+  }
+
+  &__stats {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  &__stat {
+    border-radius: 14px;
+    border: 1px solid color-mix(in srgb, var(--accent) 22%, #e5e7eb);
+    background: color-mix(in srgb, var(--accent) 7%, #f9fafb);
+    padding: 14px;
+  }
+
+  &__k {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 6px;
+  }
+
+  &__v {
+    font-size: 15px;
+    font-weight: 800;
+    color: #111827;
+  }
+
+  &__actions {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  &__btn {
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    color: #111827;
+    cursor: pointer;
+    transition: transform .16s ease, background .16s ease, box-shadow .16s ease;
+
+   
+
+    &--primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+
+      &:hover {
+        box-shadow: 0 14px 28px color-mix(in srgb, var(--accent) 28%, transparent);
+      }
+    }
+  }
+
+  &__note {
+    margin-top: 12px;
+    font-size: 12.5px;
+    color: #6b7280;
+    line-height: 1.55;
+  }
+
+  @keyframes mpIn {
+    from { opacity: .7; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 980px) {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    &__stats {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+    

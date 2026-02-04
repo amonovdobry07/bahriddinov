@@ -3,6 +3,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Maxsulotlar from "../pages/Maxsulotlar";
 import Xizmatlar from "../pages/Xizmatlar";
+import MarketPlace from "../pages/MarketPlace";
 import Aloqa from "../pages/Aloqa";
 import Home from "../pages/Home";
 import i18n from "i18next";
@@ -31,6 +32,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/maxsulotlar" element={<Maxsulotlar />} />
           <Route path="/xizmatlar" element={<Xizmatlar />} />
+          <Route path="/marketplace" element={<MarketPlace /> }/> 
           <Route path="/aloqa" element={<Aloqa />} />
         </Routes>
       </main>

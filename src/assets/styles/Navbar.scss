@@ -452,6 +452,55 @@ select {
 }
 
 
+.lang {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "▾";
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #888;
+    font-size: 12px;
+  }
+
+  &__select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+
+    padding: 8px 38px 8px 14px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    option {
+      color: #111;
+      background: #fff;
+    }
+  }
+}
+
+
 
 
 
