@@ -12,12 +12,16 @@ import translationEn from "../locales/translationsEn";
 import translationRu from "../locales/translationsRu";
 import translationUz from "../locales/translationsUz";
 import Footer from "../components/layout/Footer";
+import translationFr from "../locales/translationFr";
+import translationTu from "../locales/translationTu";
 
 i18n.use(initReactI18next).init({
   resources: {
     en: { translation: translationEn },
     ru: { translation: translationRu },
     uz: { translation: translationUz },
+    tu: { translation: translationTu },
+    fr: { translation: translationFr }, 
   },
   lng: "uz",
   fallbackLng: "uz",

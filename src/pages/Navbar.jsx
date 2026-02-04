@@ -31,7 +31,7 @@ export default function Navbar() {
             <div className="brand__mark">BM</div>
             <div className="brand__text">
               <div className="brand__name">Bahromov Umidjon</div>
-              <div className="brand__sub">Metallga ishlov berish</div>
+              <div className="brand__sub">{t(`Metallgaishlovberish`)}</div>
             </div>
           </Link>
 
@@ -47,7 +47,7 @@ export default function Navbar() {
               {t(`xizmatlar`)}
             </Link>
             <Link className="nav__link" to="/marketplace">
-              Market Place
+              {t(`Market`)}
             </Link>
             <Link className="nav__link" to="/aloqa">
               {t(`aloqa`)}
@@ -66,6 +66,8 @@ export default function Navbar() {
                 <option value="uz">🇺🇿 Uzbek</option>
                 <option value="ru">🇷🇺 Russian</option>
                 <option value="en">🇬🇧 English</option>
+                <option value="fr">🇫🇷 French</option>
+                <option value="tu">🇹🇷 Turkish</option>
               </select>
             </div>
             {/* BURGER */}

@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import "../assets/styles/MarketPlace.scss";
+import { useTranslation } from "react-i18next";
 
 import wbLogo from "../assets/market/wb.png";
 import ozonLogo from "../assets/market/ozon.png";
@@ -7,50 +8,52 @@ import yandexLogo from "../assets/market/yandex.png";
 import uzumLogo from "../assets/market/uzum.png";
 
 export default function MarketplaceSection() {
+  const { t } = useTranslation();
+
   const markets = useMemo(
     () => [
       {
         key: "wb",
         name: "Wildberries",
-        desc: "Ko‘p buyurtma qilinadigan",
+        descKey: "mp.wb.desc",
         logo: wbLogo,
         accent: "#a24cff",
         rating: "4.8",
-        delivery: "1–3 kun",
-        pay: "Karta / Naqd",
+        deliveryKey: "mp.delivery.1_3",
+        payKey: "mp.pay.card_cash",
         link: "#",
       },
       {
         key: "ozon",
         name: "Ozon",
-        desc: "Aksiya tez-tez bo‘ladi",
+        descKey: "mp.ozon.desc",
         logo: ozonLogo,
         accent: "#2b7cff",
         rating: "4.7",
-        delivery: "2–4 kun",
-        pay: "Karta / Bo‘lib",
+        deliveryKey: "mp.delivery.2_4",
+        payKey: "mp.pay.card_installment",
         link: "#",
       },
       {
         key: "yandex",
         name: "Yandex Market",
-        desc: "Eng tez yetkazish",
+        descKey: "mp.yandex.desc",
         logo: yandexLogo,
         accent: "#ff3b30",
         rating: "4.6",
-        delivery: "1–2 kun",
-        pay: "Karta",
+        deliveryKey: "mp.delivery.1_2",
+        payKey: "mp.pay.card",
         link: "#",
       },
       {
         key: "uzum",
         name: "Uzum Market",
-        desc: "Narx qulay",
+        descKey: "mp.uzum.desc",
         logo: uzumLogo,
         accent: "#7c3aed",
         rating: "4.9",
-        delivery: "1–3 kun",
-        pay: "Karta / Bo‘lib",
+        deliveryKey: "mp.delivery.1_3",
+        payKey: "mp.pay.card_installment",
         link: "#",
       },
     ],
@@ -65,17 +68,15 @@ export default function MarketplaceSection() {
       <div className="container mpPro__container">
         {/* Header */}
         <div className="mpPro__head">
-          <div className="mpPro__eyebrow">MARKETPLACES</div>
-          <h2 className="mpPro__title">Qayerda qulay bo‘lsa, o‘sha yerda xarid qiling</h2>
-          <p className="mpPro__sub">
-            Yetkazish, to‘lov va reytingni tez solishtiring. Keyin 1 klik bilan marketplace’ga o‘ting.
-          </p>
+          <div className="mpPro__eyebrow">{t("mp.eyebrow")}</div>
+          <h2 className="mpPro__title">{t("mp.title")}</h2>
+          <p className="mpPro__sub">{t("mp.sub")}</p>
         </div>
 
         {/* Body */}
         <div className="mpPro__grid">
           {/* Left list */}
-          <aside className="mpPro__list" role="tablist" aria-label="Marketplaces">
+          <aside className="mpPro__list" role="tablist" aria-label={t("mp.aria.marketplaces")}>
             {markets.map((m) => {
               const isActive = m.key === active;
               return (
@@ -94,7 +95,7 @@ export default function MarketplaceSection() {
 
                   <span className="mpPro__meta">
                     <span className="mpPro__name">{m.name}</span>
-                    <span className="mpPro__desc">{m.desc}</span>
+                    <span className="mpPro__desc">{t(m.descKey)}</span>
                   </span>
 
                   <span className="mpPro__chev" aria-hidden="true">›</span>
@@ -107,44 +108,43 @@ export default function MarketplaceSection() {
           <div className="mpPro__panel" style={{ ["--accent"]: current.accent }}>
             <div className="mpPro__panelTop">
               <div>
-                <div className="mpPro__panelLabel">Tanlangan marketplace</div>
+                <div className="mpPro__panelLabel">{t("mp.selected")}</div>
                 <div className="mpPro__panelTitle">{current.name}</div>
               </div>
 
-              <span className="mpPro__badge">{current.desc}</span>
+              <span className="mpPro__badge">{t(current.descKey)}</span>
             </div>
 
             <div className="mpPro__stats">
               <div className="mpPro__stat">
-                <div className="mpPro__k">Reyting</div>
+                <div className="mpPro__k">{t("mp.k.rating")}</div>
                 <div className="mpPro__v">{current.rating}</div>
               </div>
               <div className="mpPro__stat">
-                <div className="mpPro__k">Yetkazish</div>
-                <div className="mpPro__v">{current.delivery}</div>
+                <div className="mpPro__k">{t("mp.k.delivery")}</div>
+                <div className="mpPro__v">{t(current.deliveryKey)}</div>
               </div>
               <div className="mpPro__stat">
-                <div className="mpPro__k">To‘lov</div>
-                <div className="mpPro__v">{current.pay}</div>
+                <div className="mpPro__k">{t("mp.k.pay")}</div>
+                <div className="mpPro__v">{t(current.payKey)}</div>
               </div>
             </div>
 
             <div className="mpPro__actions">
               <a className="mpPro__btn mpPro__btn--primary" href={current.link}>
-                Marketplace’da ochish
+                {t("mp.btn.open")}
               </a>
+
               <button
                 className="mpPro__btn"
                 type="button"
                 onClick={() => navigator.clipboard?.writeText(current.link)}
               >
-                Linkni nusxalash
+                {t("mp.btn.copy")}
               </button>
             </div>
 
-            <div className="mpPro__note">
-              Bu bo‘lim “xizmatlar” sahifangizdagi toza card uslubiga mos: oq fon, yumshoq border, accent faqat kerakli joyda.
-            </div>
+            <div className="mpPro__note">{t("mp.note")}</div>
           </div>
         </div>
       </div>
